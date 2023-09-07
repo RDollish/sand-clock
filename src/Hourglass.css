@@ -1,0 +1,24 @@
+.sand-particle {
+  background-color: #e67e22;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%; /* Create circular particles */
+  position: absolute;
+  opacity: 0.8;
+  animation: fall linear 1s; /* Remove the 'forwards' option for now */
+  z-index: 1; /* Ensure sand particles appear above the hourglass */
+}
+
+/* Styling for the sand particle wrappers (for spacing) */
+.sand-particle-wrapper {
+  display: inline-block;
+  margin: 0 1px; /* Adjust spacing between particles as needed */
+}
+
+/* Styling for the hourglass container */
+.hourglass {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 0 auto;
+}
