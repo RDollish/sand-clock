@@ -1,9 +1,11 @@
+# Sand Clock
+
 # Work In Progress - Not currently functional.
 
 # Introduction
-Traditional timers often rely on digital or analog displays to count down time, but the Hourglass Timer takes a different approach by simulating an hourglass with sand particles. This project was created to offer an alternative, visually appealing, and interactive timer experience.
+Traditional timers often rely on digital or analog displays to count down time, but the Sand Clock takes a different approach by simulating an hourglass with sand particles. This project was created to offer an alternative, visually appealing, and interactive timer experience.
 
-The Hourglass Timer is implemented using React for the user interface and Matter.js, a 2D physics engine, to simulate the behavior of falling sand particles. When the timer starts, the sand particles gracefully flow from the upper chamber to the lower chamber, creating a captivating visual effect.
+The Sand Clock is implemented using React for the user interface and Matter.js, a 2D physics engine, to simulate the behavior of falling sand particles. When the timer starts, the sand particles gracefully flow from the upper chamber to the lower chamber, creating a captivating visual effect.
 
 # Features
 Interactive UI: The Hourglass Timer provides buttons to start, pause, and reset the timer, enhancing user control and interaction.
