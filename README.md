@@ -1,70 +1,29 @@
-# Getting Started with Create React App
+# Sand Clock
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Work In Progress - Not currently functional.
 
-## Available Scripts
+# Introduction
+Traditional timers often rely on digital or analog displays to count down time, but the Sand Clock takes a different approach by simulating an hourglass with sand particles. This project was created to offer an alternative, visually appealing, and interactive timer experience.
 
-In the project directory, you can run:
+The Sand Clock is implemented using React for the user interface and Matter.js, a 2D physics engine, to simulate the behavior of falling sand particles. When the timer starts, the sand particles gracefully flow from the upper chamber to the lower chamber, creating a captivating visual effect.
 
-### `npm start`
+# Features
+Interactive UI: The Hourglass Timer provides buttons to start, pause, and reset the timer, enhancing user control and interaction.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Dynamic Sand Simulation: Sand particles realistically fall under the influence of gravity, creating a captivating visual effect.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Customizable Timer: Users can set the desired timer duration, and the hourglass will visually represent the countdown.
 
-### `npm test`
+Technologies
+React: A JavaScript library for building user interfaces.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Matter.js: A 2D physics engine that simulates physical interactions between objects, used for the sand particle simulation.
 
-### `npm run build`
+# Usage
+Set the desired timer duration in seconds using the input field.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Click the "Start" button to begin the timer. The sand particles will start falling.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+You can pause the timer at any time by clicking the "Pause" button.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+To reset the timer, click the "Reset" button.
