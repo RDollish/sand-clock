@@ -5,7 +5,7 @@
   border-radius: 50%; /* Create circular particles */
   position: absolute;
   opacity: 0.8;
-  animation: fall linear 1s; /* Remove the 'forwards' option for now */
+  animation: fall linear 1s;
   z-index: 1; /* Ensure sand particles appear above the hourglass */
 }
 

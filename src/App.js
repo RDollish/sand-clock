@@ -1,6 +1,5 @@
 import React from 'react';
 import Timer from './Timer';
-import Hourglass from './Hourglass';
 
 const App = () => {
   // Handle timer start, pause, and reset events

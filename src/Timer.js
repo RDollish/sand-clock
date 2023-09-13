@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Hourglass from './Hourglass';
-import './Timer.css'; // Import the Timer.css file
+import './Timer.css';
 
 const Timer = () => {
   const [duration, setDuration] = useState(0);

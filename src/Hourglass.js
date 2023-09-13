@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import './Hourglass.css';
-import Matter from 'matter-js';
+import Matter, { Runner } from 'matter-js';
 
 const Hourglass = ({ currentTime, duration, running }) => {
   const [engine, setEngine] = useState(null);
   const [world, setWorld] = useState(null);
   const [sandParticles, setSandParticles] = useState([]);
+  const [runner, setRunner] = useState(null);
   const numberOfParticles = Math.min(currentTime, duration);
 
   useEffect(() => {
@@ -64,9 +65,12 @@ const Hourglass = ({ currentTime, duration, running }) => {
 
     setSandParticles(particles);
 
-    // Save the engine and world in state
-    setEngine(matterEngine);
-    setWorld(matterWorld);
+    // Create a runner for the engine to update physics
+    const runner = Runner.create();
+    Runner.run(runner, matterEngine);
+
+    // Save the runner in state (to stop it later when necessary)
+    setRunner(runner);
   }, [currentTime, duration, running]);
 
   useEffect(() => {
@@ -78,6 +82,16 @@ const Hourglass = ({ currentTime, duration, running }) => {
       });
     }
   }, [engine, world, sandParticles]);
+
+  useEffect(() => {
+    return () => {
+      // Stop the runner and clear the engine when unmounting
+      if (runner) {
+        Runner.stop(runner);
+        Matter.Engine.clear(engine);
+      }
+    };
+  }, [engine, runner]);
 
   return (
     <div className="hourglass">
