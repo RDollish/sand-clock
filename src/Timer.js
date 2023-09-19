@@ -41,7 +41,7 @@ const Timer = () => {
   return (
     <div className="timer-page">
       <div className="hourglass-time">
-      <Hourglass currentTime={currentTime} duration={duration} running={running} />
+      <Hourglass currentTime={currentTime} duration={duration} isRunning={running} />
       </div>
       <div className="timer-container"> 
         <input

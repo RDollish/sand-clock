@@ -1,72 +1,143 @@
-* {
-	border: 0;
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-:root {
-	--bg: #e3e4e8;
-	--fg: #978c66;
-	--primary: #e625f4;
-	font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
-}
-body {
-	background: var(--bg);
-	display: grid;
-	font: 1em/1.5 sans-serif;
-	height: 100vh;
-	place-items: center;
-}
-
-.hourglass {
-	--polygonH: polygon(0% 0%,100% 0%,100% 5.55%,95% 5.55%,95% 28%,60% 46%,60% 54%,95% 72%,95% 94.45%,100% 94.45%,100% 100%,0% 100%,0% 94.45%,5% 94.45%,5% 72%,40% 54%,40% 46%,5% 28%,5% 5.55%,0% 5.55%);
-	animation-name: flip;
-	animation-timing-function: ease-in-out;
-	background-image: linear-gradient(var(--primary) 0.5em,#737a8c55 0.5em 8.5em,var(--primary) 8.5em);
-	clip-path: var(--polygonH);
-	-webkit-clip-path: var(--polygonH);
-	overflow: hidden;
-	position: relative;
-	width: 5em;
-	height: 9em;
-	z-index: 0;
-}
-
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--bg: #17181c;
-		--fg: #c7cad1;
-	}
-}
-
-.hourglass-container {
-    position: relative;
-    width: 100px;
-    height: 200px;
-    margin: 0 auto;
-  }
-  
-  
-  .upper,
-  .lower {
+body {  
     width: 100%;
-    height: 50%;
-    background-color: #000;
-  }
-  
-  .timer-value {
-    text-align: center;
-    font-size: 16px;
-    margin-top: 10px;
-  }
-  
-  .sand {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.wrap {
+    position: relative;
+    overflow: hidden;
+    animation: wrapkeys 14s linear infinite;
+}
+
+.parts {
+    width: 50px;
+    height: 100px;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+#top {
+    border-radius: 0 0 25px 25px;
+}
+#top .sand{            
+    animation: tsandkeys 14s linear infinite;
+}
+#bottom {
+    border-radius: 25px 25px 0 0;
+}
+#bottom .sand{
+    animation: bsandkeys 14s linear infinite;
+}
+
+.sand {
     position: absolute;
+    height: 75px;
+    background: #a00;
     bottom: 0;
-    left: 0;
-    width: 120%;
-    background-color: #ffd700; /* Sand color */
-    transition: height 1s linear; /* Adjust the animation duration as needed */
-  }
-  
+    width: 100%;
+}
+
+#fill {
+    position: absolute;
+    background: #a00;
+    width: 5px;
+    height: 100px;
+    left: 22.5px;
+    bottom: 0;
+    animation: fillkeys 14s linear infinite;
+}
+
+@keyframes wrapkeys {
+    0%{
+        transform: rotate(0);
+    }
+    42.8571429%{
+        transform: rotate(0);
+    }
+    50%{
+        transform: rotate(180deg);
+    }
+    92.8571429%{
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+@keyframes fillkeys{
+    0%{
+        bottom: 0;
+    }
+    35.7142857% {
+        bottom: 0;
+    }
+    42.8571429%{
+        bottom: -30.3650459px;
+    }
+    50%{
+        bottom: 100px;
+    }85.7142857%{
+        bottom: 100px;
+    }
+    92.8571429%{
+        bottom: 130.3650459px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+@keyframes tsandkeys{
+    0% {
+        bottom: 0
+    }
+    35.7142857% {
+        bottom: -75px;
+    }
+    42.8571429%{
+        bottom: -75px;
+    }
+    50%{
+        bottom: -75px;
+    }
+    50.000000001%{
+        bottom: 100px;
+    }
+    85.7142857%{
+        bottom: 30.3650459px;
+    }
+    92.8571429%{
+        bottom: 30.3650459px;
+    }
+    100%{
+        bottom: 0;
+    }
+}
+@keyframes bsandkeys{
+    0%{
+        bottom: -75px;
+    }
+    35.7142857%{
+        bottom: -5.3650459px;
+    }
+    42.8571429%{
+        bottom: -5.3650459px;
+    }
+    50%{
+        bottom: 25px;
+    }
+    85.7142857%{
+        bottom: 100px;
+    }
+    85.71428579%{
+        bottom: -75px;
+    }
+    100%{
+        bottom: -75px;
+    }
+}

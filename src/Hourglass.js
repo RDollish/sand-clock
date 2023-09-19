@@ -1,20 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Hourglass.css';
 
 const Hourglass = ({ currentTime, duration }) => {
-  // Calculate the percentage of time remaining
-  const percentageRemaining = (currentTime / duration) * 100;
+  const [sandAnimation, setSandAnimation] = useState('');
+  const [flipAnimation, setFlipAnimation] = useState('');
+
+  useEffect(() => {
+    if (currentTime === 0) {
+      // Reset the animations when the timer is reset
+      setSandAnimation('');
+      setFlipAnimation('');
+    } else if (currentTime < duration / 2) {
+      // First half of the timer, sand fills bottom
+      setSandAnimation('fillBottom');
+      setFlipAnimation('');
+    } else {
+      // Second half of the timer, flip the hourglass and fill top
+      setSandAnimation('fillTop');
+      setFlipAnimation('flipped');
+    }
+  }, [currentTime, duration]);
 
   return (
-    <div className="hourglass-container">
-      <div className="hourglass">
-        <div className="upper"></div>
-        <div className="lower"></div>
+    <div className={`wrap ${flipAnimation}`}>
+      <div className={`parts ${flipAnimation}`} id="top">
+        <div className={`sand ${sandAnimation}`} />
       </div>
-      <div className="timer-value">
-        {currentTime}/{duration} seconds
+      <div className={`parts ${flipAnimation}`} id="bottom">
+        <div className={`sand ${sandAnimation}`} />
       </div>
-      <div className="sand" style={{ height: `${percentageRemaining}%` }}></div>
+      <div id="fill" className={`sand ${sandAnimation}`} />
     </div>
   );
 };
